@@ -26,7 +26,7 @@ function isPrime(number) {
 
 }
 
-function numberOfPrimes(number) {
+function generatePrimesArray(number) {
     let primesArray = []
     const numbersArray = generateNumbersArray(number);
     numbersArray.forEach((number) => {
@@ -34,10 +34,24 @@ function numberOfPrimes(number) {
             primesArray.push(number)
         }
     })
-    return primesArray.length
+    return primesArray
 }
+
+function countPrimes(number) {
+    let numberOfPrimes = 0
+    const numbersArray = generateNumbersArray(number);
+    numbersArray.forEach((number) => {
+        if (isPrime(number)) {
+            numberOfPrimes++
+        }
+    })
+    return numberOfPrimes
+}
+
+const testNumber = 30000
 const startTimer = performance.now()
 console.log("Loading...")
-const primesCount = numberOfPrimes(20000)
+const testCount = countPrimes(testNumber)
 const endTimer = performance.now()
-console.log("Done!", `${primesCount} primes found in ${((endTimer-startTimer)/1000).toFixed(2)} seconds!`)
+console.log("Done!", `${testCount} primes found in ${((endTimer-startTimer)/1000).toFixed(2)} seconds!`)
+console.log(generatePrimesArray(testNumber))
