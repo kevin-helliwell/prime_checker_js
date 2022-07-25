@@ -41,13 +41,3 @@ console.log("Loading...")
 const primesCount = numberOfPrimes(20000)
 const endTimer = performance.now()
 console.log("Done!", `${primesCount} primes found in ${((endTimer-startTimer)/1000).toFixed(2)} seconds!`)
-
-
-// const testNumbers = generateNumbersArray(100)
-//
-// testNumbers.forEach((number) => {
-//     if (isPrime(number)) {
-//         console.log(number);
-//     }
-//
-// })
